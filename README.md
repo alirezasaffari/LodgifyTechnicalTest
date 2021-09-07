@@ -1,0 +1,1 @@
+# Lodgify_Technical_Test
