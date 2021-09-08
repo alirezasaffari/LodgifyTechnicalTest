@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using VacationRental.Domain.Enums;
 using VacationRental.Domain.Models;
 
 namespace VacationRental.Api.Controllers
@@ -58,7 +59,7 @@ namespace VacationRental.Api.Controllers
 
             var key = new ResourceIdViewModel { Id = _bookings.Keys.Count + 1 };
 
-            _bookings.Add(key.Id, new BookingViewModel
+            _bookings.Add(key.Id, new BookingViewModel(BookingTypeEnum.Booking)
             {
                 Id = key.Id,
                 Nights = model.Nights,
