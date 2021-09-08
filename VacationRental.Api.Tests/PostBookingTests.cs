@@ -1,8 +1,7 @@
 ﻿using System;
-using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
-using VacationRental.Api.Models;
+using VacationRental.Domain.Models;
 using Xunit;
 
 namespace VacationRental.Api.Tests
@@ -34,9 +33,9 @@ namespace VacationRental.Api.Tests
 
             var postBookingRequest = new BookingBindingModel
             {
-                 RentalId = postRentalResult.Id,
-                 Nights = 3,
-                 Start = new DateTime(2001, 01, 01)
+                RentalId = postRentalResult.Id,
+                Nights = 3,
+                Start = new DateTime(2001, 01, 01)
             };
 
             ResourceIdViewModel postBookingResult;
