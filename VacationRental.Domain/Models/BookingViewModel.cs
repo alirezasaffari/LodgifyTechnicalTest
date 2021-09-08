@@ -15,7 +15,7 @@ namespace VacationRental.Domain.Models
         public int RentalId { get; set; }
         public DateTime Start { get; set; }
         public int Nights { get; set; }
-        public int UnitNo { get; set; }
+        public int Unit { get; set; }
 
     }
 }

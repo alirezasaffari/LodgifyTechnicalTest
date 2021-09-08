@@ -3,6 +3,6 @@
     public class CalendarBookingViewModel
     {
         public int Id { get; set; }
-        public int UnitNo { get; set; }
+        public int Unit { get; set; }
     }
 }

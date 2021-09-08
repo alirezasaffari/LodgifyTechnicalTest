@@ -2,6 +2,6 @@
 {
     public class PreparationTimeViewModel
     {
-        public int UnitNo { get; set; }
+        public int Unit { get; set; }
     }
 }
