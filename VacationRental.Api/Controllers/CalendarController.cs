@@ -1,7 +1,7 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
-using Microsoft.AspNetCore.Mvc;
-using VacationRental.Api.Models;
+using VacationRental.Domain.Models;
 
 namespace VacationRental.Api.Controllers
 {
@@ -28,10 +28,10 @@ namespace VacationRental.Api.Controllers
             if (!_rentals.ContainsKey(rentalId))
                 throw new ApplicationException("Rental not found");
 
-            var result = new CalendarViewModel 
+            var result = new CalendarViewModel
             {
                 RentalId = rentalId,
-                Dates = new List<CalendarDateViewModel>() 
+                Dates = new List<CalendarDateViewModel>()
             };
             for (var i = 0; i < nights; i++)
             {
