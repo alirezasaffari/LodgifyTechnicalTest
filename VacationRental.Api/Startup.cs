@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Swashbuckle.AspNetCore.Swagger;
+using Microsoft.OpenApi.Models;
 using VacationRental.Domain;
 using VacationRental.Infrastructure;
 
@@ -22,7 +22,10 @@ namespace VacationRental.Api
         {
             services.AddMvc(options => options.EnableEndpointRouting = false);
 
-            services.AddSwaggerGen(opts => opts.SwaggerDoc("v1", new Info { Title = "Vacation rental information", Version = "v1" }));
+            services.AddSwaggerGen(opts =>
+            {
+                opts.SwaggerDoc("v1", new OpenApiInfo { Title = "Vacation rental information", Version = "v1" });
+            });
 
             services.AddViewModels();
             services.AddServices();
