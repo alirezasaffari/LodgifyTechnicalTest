@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using VacationRental.Domain.Enums;
+using VacationRental.Domain.Exceptions;
 using VacationRental.Domain.Models;
 using VacationRental.Domain.Services;
 
@@ -21,7 +22,7 @@ namespace VacationRental.Infrastructure.Services
         public BookingViewModel Get(int bookingId)
         {
             if (!_bookings.ContainsKey(bookingId))
-                throw new KeyNotFoundException("Booking with given id was not found");
+                throw new BookingNotFoundException("Booking with given id was not found");
 
             return _bookings[bookingId];
         }
@@ -61,7 +62,7 @@ namespace VacationRental.Infrastructure.Services
                 throw new ApplicationException("Not available");
 
 
-            //In each book we should assign the unit number, so we want to find available unit number:
+            //In each book we should assign the unit number, so we want to find available unit number
             var unitLists = Enumerable.Range(1, _rentals[model.RentalId].Units).ToList();
             var unitNumber = unitLists.Except(reservedUnitNumber).FirstOrDefault();
 
